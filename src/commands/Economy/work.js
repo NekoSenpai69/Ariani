@@ -9,11 +9,11 @@ module.exports = {
    react: "💼",
    start: async(client, m, { text, prefix, isBotAdmin,isAdmin,mentionByTag}) => {
       const works = [
-        { name: ' Bus Conductor', min: 100, max: 200 },
-        { name: 'Prostitude', min: 80, max: 150 },
-        { name: 'Bus Driver', min: 70, max: 120 },
-        { name: 'Drug Dealer', min: 90, max: 180 },
-        { name: 'Racist', min: 60, max: 100 }
+        { name: ' Bus Conductor', min: 400, max: 600 },
+        { name: 'Prostitude', min: 150, max: 400 },
+        { name: 'Bus Driver', min: 200, max: 900 },
+        { name: 'Drug Dealer', min: 500, max: 900 },
+        { name: 'Racist', min: 600, max: 1000 }
     ]
     const work = getRandomWork(works)
     const earnings = Math.floor(Math.random() * (work.max - work.min + 1)) + work.min;
@@ -27,19 +27,19 @@ module.exports = {
       
         switch (work.name) {
           case 'Bus Conductor':
-            payout = { min: 100, max: 200 };
+            payout = { min: 400, max: 600 };
             break;
           case 'Prostitude':
-            payout = { min: 80, max: 150 };
+            payout = { min: 150, max: 400 };
             break;
           case 'Bus Driver':
-            payout = { min: 70, max: 120 };
+            payout = { min: 200, max: 900 };
             break;
           case 'Drug Dealer':
-            payout = { min: 90, max: 180 };
+            payout = { min: 500, max: 900 };
             break;
           case 'Racist':
-            payout = { min: 60, max: 100 };
+            payout = { min: 600, max: 1000 };
             break;
           default:
             payout = { min: 0, max: 0 };
