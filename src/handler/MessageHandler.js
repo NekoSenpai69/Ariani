@@ -114,7 +114,7 @@ module.exports = async (client, m, commands, chatUpdate) => {
       type == "extendedTextMessage" && m.message.extendedTextMessage.contextInfo != null ? m.message.extendedTextMessage.contextInfo.mentionedJid : [];
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      var rae = `https://telegra.ph/file/75368c6fe4abb9d0f2bb9.png`;
+      var rae = `https://telegra.ph/file/319719cfed3c3b545b164.jpg`;
       let txtt = `*${prefix}${cmdName}* is an ⛔ invalid command`;
       // let buttons = [
       //   {
