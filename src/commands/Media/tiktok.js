@@ -31,7 +31,7 @@ module.exports = {
         }
 
         require('../../lib/tiktokscrapper').Tiktok(text).then( data => {
-            client.sendMessage(m.from, { video: { url: data.watermark },caption:`For Aku by aku`},{ quoted: m })
+            client.sendMessage(m.from, { video: { url: data.watermark },caption:`For you by Deryl`},{ quoted: m })
         })
         },
     }
