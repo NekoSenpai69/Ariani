@@ -5,25 +5,22 @@ module.exports = {
     usage:`${prefa}lyrics <query>`,
     desc: "Finds the lyrics of the given song",
     category: "Media",
-    cool:3,
+    react: "✅",
+    cool:10,
     start: async(client, m,{text,pushName}) => {       
 if (!text) return m.reply(`❌ No query provided!`)
 try {
-const lyrics = await findLyrics(text)
-if (lyrics.lyrics == '') return
+const lyric = await lyrics(text);
+if (lyric == 'Unknow lyric.') return m.reply("")
+txtt = lyric.split("_").pop()
 var txt = `
-*📕 Title :* ${lyrics.title}
-
-*🧑🏻‍🎤 Artist :* ${lyrics.artist}
-
 *🎶 Lyrics :-* \n
-${lyrics.lyrics}
+${lyric}
 `
-//  console.log(lyrics)
+ console.log(lyric)
  await client.sendMessage(m.from, {text:txt},{quoted:m})
 } catch (err) {
     console.log(err)
     }
-   
   }
 }
