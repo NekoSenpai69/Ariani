@@ -6,7 +6,7 @@ module.exports = {
     name: 'ytaudio',
     aliases: ['yta', 'play'],
     category: 'media',
-    exp: 5,
+     react:"🎵",
     description: 'Downloads given YT Video and sends it as Audio',
     async execute(client, arg, M) {
         const link = async (term) => {
