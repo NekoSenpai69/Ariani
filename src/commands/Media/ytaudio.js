@@ -1,68 +1,57 @@
-const YT = require('../../lib/ytdl')
-const {
-    isUrl,
-    fetchBuffer
-} = require('../../lib/Function')
-const fs = require("fs")
-const yts = require("yt-search")
-require('../../../settings')
+const YT = require('../../lib/YT')
+const yts = require('yt-search')
+
 module.exports = {
-    name: "ytaudio",
-    alias: ["playa", "yta", "mp3"],
-    usage: `${prefa}play <query>`,
-    desc: "Plays the song...",
-    category: "Media",
-    react: "✅",
-    start: async (client, m, {
-        command,
-        prefix,
-        text,
-        args
-    }) => {
-        const link = async (terms) => {
-            const {
-                videos
-            } = await yts(terms)
+    name: 'ytaudio',
+    aliases: ['yta'],
+    category: 'media',
+    exp: 5,
+    description: 'Downloads given YT Video and sends it as Audio',
+    async execute(client, flag, arg, M) {
+        const link = async (term) => {
+            const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
             return videos[0].url
         }
-        if (!text) return m.reply('❌ Please provide a valid YouTube link to get the lyrics.')
+        if (!arg) return M.reply('Please use this command with a valid youtube.com link')
         const validPathDomains = /^https?:\/\/(youtu\.be\/|(www\.)?youtube\.com\/(embed|v|shorts)\/)/
-        const term = validPathDomains.test(text) ? text.trim() : await link(text)
-        if (!term) return m.reply('❌ Please use this command with a valid youtube contant link')
-        if (!YT.validateURL(term.trim())) return m.reply('❌ Please provide a valid YouTube link to get the lyrics.')
-        const {
-            videoDetails
-        } = await YT.getInfo(term)
-        m.reply('🔍 Searching for your request...')
-        let caption = `🎵 *_Title:_* ${videoDetails.title} | 🎧 *_Type:_* Audio | 🎤 *_From:_* ${videoDetails.ownerChannelName}`
+        const term = validPathDomains.test(arg) ? arg.trim() : await link(arg)
+        if (!term) return M.reply('Please use this command with a valid youtube contant link')
+        if (!YT.validateURL(term.trim())) return M.reply('Please use this command with a valid youtube.com link')
+        const { videoDetails } = await YT.getInfo(term)
+        M.reply('Downloading has started please have some pesence')
+        let text = `*Title:* ${videoDetails.title} | *Type:* Audio | *From:* ${videoDetails.ownerChannelName}`
         client.sendMessage(
-            m.from, {
+            M.from,
+            {
                 image: {
                     url: `https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`
                 },
-                caption
-            }, {
-                quoted: m
+                caption: text
+            },
+            {
+                quoted: M
             }
         )
-        if (Number(videoDetails.lengthSeconds) > 1800) return m.reply('❌ Cannot download audio longer than 30 minutes')
+        if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download audio longer than 30 minutes')
         const audio = YT.getBuffer(term, 'audio')
             .then(async (res) => {
                 await client.sendMessage(
-                    m.from, {
+                    M.from,
+                    {
                         document: res,
                         mimetype: 'audio/mpeg',
                         fileName: videoDetails.title + '.mp3'
-                    }, {
-                        quoted: m
+                    },
+                    {
+                        quoted: M
                     }
                 )
             })
             .catch((err) => {
-                return m.reply(err.toString())
+                return M.reply(err.toString())
                 client.log(err, 'red')
             })
     }
 }
-
+//M.quoted.mtype === 'imageMessage',
