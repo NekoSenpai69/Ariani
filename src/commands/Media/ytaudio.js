@@ -6,6 +6,7 @@ module.exports = {
     aliases: ['yta'],
     category: 'media',
     description: 'Downloads given YT Video and sends it as Audio',
+    react: "✅",
     async execute(client, flag, arg, M) {
         const link = async (term) => {
             const { videos } = await yts(term.trim())
