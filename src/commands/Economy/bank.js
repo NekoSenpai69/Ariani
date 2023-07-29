@@ -23,7 +23,7 @@ module.exports = {
     const bank = economy.bank.toLocaleString();
 
     let walText = 
-    `\n*❁財⍩Your Bank Details - 💴*
+    `\n🏦 *Bank* 🏦
     \n👤Name: ${pushName}
     \n🏷️Tag: ${tag}
     \n💳Bank: ${bank}`
