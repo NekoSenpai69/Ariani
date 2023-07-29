@@ -4,8 +4,8 @@ module.exports = {
     name: 'ytsearch',
     aliases: ['yts'],
     category: 'media',
-    exp: 5,
     description: 'Searches the video of the given query in YouTube',
+    react: "✅",
     async execute(client, flag, arg, M) {
         if (!arg) return M.reply('Sorry you did not give any search term!')
         const { videos } = await yts(arg.trim())
