@@ -92,12 +92,12 @@ module.exports = {
             let tag = m.sender.substring(3, 7)
             let tex = "";
             if (pushName) {
-                tex += `*🪪 Name*: ${pushName}#${tag}\n\n`
-                tex += `*🍥 Number*: ${m.sender}\n\n`
-                tex += `*🎌 Bio*: ${getBio}\n\n`
+                tex += `*🟩 Name*: ${pushName}#${tag}\n\n`
+                tex += `*🟨 Number*: ${m.sender}\n\n`
+                tex += `*🟦 Bio*: ${getBio}\n\n`
             }
 
-            tex += `*🎯 XP*: ${senderUser.xp} / ${Levels.xpFor(senderUser.level + 1)}\n\n*🔮 Level*: ${senderUser.level}\n\n*🏮 Role*: ${role}\n`
+            tex += `*🟪 XP*: ${senderUser.xp} / ${Levels.xpFor(senderUser.level + 1)}\n\n*⬛ Level*: ${senderUser.level}\n\n*🟧 Role*: ${role}\n`
             let userProfile = await db.get(`${m.sender}.icon`)
             if (userProfile) {
                 ppuser = userProfile
@@ -110,10 +110,10 @@ module.exports = {
             }
 
             if (groupName) {
-                tex += `\n*🌊 Group*: ${groupName}\n\n`
+                tex += `\n*🟫 Group*: ${groupName}\n\n`
             }
             if (isAdmin) {
-                tex += `*〽️ Admin*: true\n`
+                tex += `*⬜ Admin*: true\n`
             }
             // console.log(`${tex} ${userProfile} ${senderBio}`)
 
@@ -222,12 +222,12 @@ module.exports = {
             let tag = users.substring(3, 7)
             let tex = "";
             if (unme) {
-                tex += `*🪪 Name*: ${unme}#${tag}\n\n`
-                tex += `*🍥 Number*: ${users}\n\n`
-                tex += `*🎌 Bio*: ${getBio}\n\n`
+                tex += `*🟩 Name*: ${unme}#${tag}\n\n`
+                tex += `*🟨 Number*: ${users}\n\n`
+                tex += `*🟦 Bio*: ${getBio}\n\n`
             }
 
-            tex += `*🎯 XP*: ${senderUser.xp} / ${Levels.xpFor(senderUser.level + 1)}\n\n*🔮 Level*: ${senderUser.level}\n\n*🏮 Role*: ${role}\n`
+            tex += `*🟪 XP*: ${senderUser.xp} / ${Levels.xpFor(senderUser.level + 1)}\n\n*⬛ Level*: ${senderUser.level}\n\n*🟧 Role*: ${role}\n`
             let userProfile = await db.get(`${users}.icon`)
             if (userProfile) {
                 ppuser = userProfile
@@ -240,10 +240,10 @@ module.exports = {
             }
 
             if (groupName) {
-                tex += `\n*🌊 Group*: ${groupName}\n\n`
+                tex += `\n*🟫 Group*: ${groupName}\n\n`
             }
             if (isAdmin) {
-                tex += `*〽️ Admin*: true\n`
+                tex += `*⬜ Admin*: true\n`
             }
             // console.log(`${tex} ${userProfile} ${senderBio}`)
 
