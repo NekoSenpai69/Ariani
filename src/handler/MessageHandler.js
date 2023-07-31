@@ -114,8 +114,8 @@ module.exports = async (client, m, commands, chatUpdate) => {
       type == "extendedTextMessage" && m.message.extendedTextMessage.contextInfo != null ? m.message.extendedTextMessage.contextInfo.mentionedJid : [];
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      var rae = `https://telegra.ph/file/319719cfed3c3b545b164.jpg`;
-      let txtt = `*${prefix}${cmdName}* is an ⛔ invalid command`;
+      var rae = `https://telegra.ph/file/5dd683b085bcfd00fd704.png`;
+      let txtt = `*${prefix}${cmdName}* is an 🟥 invalid command`;
       // let buttons = [
       //   {
       //     buttonId: `${prefix}help`,
@@ -218,7 +218,7 @@ module.exports = async (client, m, commands, chatUpdate) => {
       return m.reply("*You cant use commands in dm*");
     if (cmd) {
       if (ban.includes(`${m.sender}`))
-        return m.reply(`You are banned from using commands ❌`);
+        return m.reply(`🟥 You are banned from using commands`);
     }
     if (cmd.react) {
       const reactm = {
