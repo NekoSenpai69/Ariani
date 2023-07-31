@@ -59,7 +59,7 @@ let cm=commands.keys()
         } 
         let txt = `*Hello (｡♡‿♡｡)* ${pushName} l'm *${process.env.NAME}*.
 	
-💡 *Tips:→ Warning:* Dont use the bot in pm or you will be banned.
+💡 *Tips:→ Warning:* Dont use the bot in dm or you will be banned.
 💡 *Tips:→ Warning:* Dont call the bot or you will be banned.
                        
 🟥 *Prefix :* [ ${prefix} ]
@@ -70,12 +70,10 @@ let cm=commands.keys()
             txt += `*${key.toUpperCase()} ${emo[keys.indexOf(key)]} :-*  \n\`\`\`${category[key]
                 .map((cmd) => cmd.name).join(", ")}\`\`\`\n\n`
         }
-        txt += `*🟪 Notes:*;
+        txt += `*🟪 Notes:*
 *➪ Use ${client.prefix}help <command name> from help the list to see its description and usage*
-*➪ Eg: ${client.prefix}help profile*
-*➪ <> means required and [ ] means optional, don't include <> or [ ] when using command.*`
-		
-        txt += `*Deryl*`	
+*➪ Eg: ${client.prefix}help profile*`
+			
     const ari = await wall.getAnimeWall3()
     const arilogo = ari[Math.floor(Math.random() * ari.length)]
     // const Button = [
