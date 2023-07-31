@@ -38,7 +38,7 @@ module.exports = {
             let gcName = metadata.subject;
 
             try {
-                ppgc = await client.profilePictureUrl(m.from, "image");
+                userPfp = await client.profilePictureUrl(m.from, "image");
               } catch {
                 userPfp = botImage3;
               }
