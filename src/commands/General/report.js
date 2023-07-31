@@ -20,7 +20,7 @@ module.exports = {
             let devs = [`263788671478@s.whatsapp.net`]
 
             for (let i = 0; i < devs.length; i++) {
-              await client.sendMessage(devs[i],});
+              await client.sendMessage(devs[i],
             }
         }
         else{
@@ -35,7 +35,7 @@ module.exports = {
               let devs = [`263788671478@s.whatsapp.net`]
 
               for (let i = 0; i < devs.length; i++) {
-                await client.sendMessage(devs[i],});
+                await client.sendMessage(devs[i],
             }
         }
     }
