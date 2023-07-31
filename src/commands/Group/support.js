@@ -21,7 +21,7 @@ const lemo = `
 
 https://chat.whatsapp.com/FbzMg4DzlGQKKfW43TPEGX`
 	    
-  await client.sendMessage(m.from,{video:{url:rae}, gifPlayback:true, caption: `*${pushName}* have a look in your DM`},{quoted:m})
+  await client.sendMessage(m.from,{video:{url:rae}, gifPlayback:true, caption: `*${pushName}*🟩 have a look in your DM`},{quoted:m})
   await  client.sendMessage(m.sender,{image:{url:Arilogogg},caption:lemo},{quoted:m})  
     }
 }
