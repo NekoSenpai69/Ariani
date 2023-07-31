@@ -73,9 +73,7 @@ let cm=commands.keys()
 *➪ Eg: ${client.prefix}help profile*`
 			
     const eternity = [
-	    "https://telegra.ph/file/d41b9e3e53a2e62a418a6.jpg",
 	    "https://telegra.ph/file/e8850f2107ad99770da7e.jpg",
-	    "https://telegra.ph/file/cee7d4b84849d6734fd6b.jpg",
 	    ];
             const eternitylogo =
              eternity[Math.floor(Math.random() * eternity.length)];
