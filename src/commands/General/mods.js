@@ -18,7 +18,7 @@ module.exports={
             //const um= await client.username(mod[i]+'@s.whatsapp.net')
             mods+=`\n✨${i+1}\n*👤 Name:* ${um}\n*📱 Contact:* http://wa.me/+${mod[i].split("@")[0]}\n`
         }
-        await  client.sendMessage(m.from,{image:{url:'https://images2.alphacoders.com/104/1044538.png'},caption:mods},{quoted:m})  
+        await  client.sendMessage(m.from,{image:{url:'https://telegra.ph/file/aa6b424ff30a9c361989f.jpg'},caption:mods},{quoted:m})  
 
     }
 }
