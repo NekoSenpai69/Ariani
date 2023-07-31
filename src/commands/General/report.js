@@ -20,9 +20,9 @@ module.exports = {
             let devs = [`263788671478@s.whatsapp.net`]
 
             for (let i = 0; i < devs.length; i++) {
-              await client.sendMessage(devs[i],
+              await client.sendMessage(devs[i];
             
-        }
+        
         else{
             if (!args[0]) return m.reply(`Please provide a message to report Developers !`);
             let userTag = m.sender.split("@")[0];
@@ -35,7 +35,7 @@ module.exports = {
               let devs = [`263788671478@s.whatsapp.net`]
 
               for (let i = 0; i < devs.length; i++) {
-                await client.sendMessage(devs[i],
+                await client.sendMessage(devs[i];
             }
         }
     }
