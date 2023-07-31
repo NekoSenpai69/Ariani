@@ -57,21 +57,23 @@ let cm=commands.keys()
         } else {
         var emo=[ "❐" ,"❐","❐","❐","❐","❐","❐","❐","❐","❐" , "❐",]
         } 
-        let txt = `*Hello (｡♡‿♡｡)* ${pushName} l'm *${process.env.NAME} *.
+        let txt = `*Hello (｡♡‿♡｡)* ${pushName} l'm *${process.env.NAME}*.
 	
-💡 *Tips:→ Script:* This is a private Script not forsale.
 💡 *Tips:→ Warning:* Dont use the bot in pm or you will be banned.
 💡 *Tips:→ Warning:* Dont call the bot or you will be banned.
                        
-🧧 *Prefix :* [ ${prefix} ]
+🟥 *Prefix :* [ ${prefix} ]
                        
-📝 Here's the *Commands* listed below :\n\n`
+⬜ Here's the *Commands* listed below :\n\n`
         const keys = Object.keys(category);
         for (const key of keys) {
             txt += `*${key.toUpperCase()} ${emo[keys.indexOf(key)]} :-*  \n\`\`\`${category[key]
                 .map((cmd) => cmd.name).join(", ")}\`\`\`\n\n`
         }
-        txt += `📗 Type *${prefix}help* <Command-Name> or <Command-Name> --info\n`;
+        txt += `*🟪 Notes:*;
+*➪ Use ${client.prefix}help <command name> from help the list to see its description and usage*
+*➪ Eg: ${client.prefix}help profile*
+*➪ <> means required and [ ] means optional, don't include <> or [ ] when using command.*`
 		
         txt += `*Deryl*`	
     const ari = await wall.getAnimeWall3()
