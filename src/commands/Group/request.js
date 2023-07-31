@@ -12,8 +12,6 @@ module.exports = {
             let userTag = m.sender.split("@")[0];
             let userMess = args.join(" ");
             let userName = pushName;
-          
-              }
             let reportMessage = `*「 Request Recieved 」*\n\n*「 👤 Request By 」:* @${userTag}\n\n*⬜ Message:* ${userMess}\n\n*🟩 Character using:*Archer*`;
             m.reply(`Sending your request to main developer...\n\nIf it is a spam you might get *blocked* and *banned*.`);
             
