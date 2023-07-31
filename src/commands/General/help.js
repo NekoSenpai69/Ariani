@@ -1,5 +1,3 @@
-const { AnimeWallpaper } = require("anime-wallpaper");
-const wall = new AnimeWallpaper();
 module.exports = {
     name: "help",
     alias: ["h","menu"],
@@ -74,14 +72,13 @@ let cm=commands.keys()
 *➪ Use ${client.prefix}help <command name> from help the list to see its description and usage*
 *➪ Eg: ${client.prefix}help profile*`
 			
-    const ari = await wall.getAnimeWall3()
-    const arilogo = ari[Math.floor(Math.random() * ari.length)]
-    // const Button = [
-    //     {buttonId: `${prefix}Ari-Ani`, buttonText: {displayText: '🌟 Script',}, type: 2},
-    //     {buttonId: `${prefix}support`, buttonText: {displayText: '🎐 Support'}, type: 1},
-    // ]
-
-    client.sendMessage(m.from,{image: {url: arilogo.image},caption: txt},{quoted:m})
+    const archer = [
+	    "https://telegra.ph/file/d41b9e3e53a2e62a418a6.jpg",
+	    "https://telegra.ph/file/e8850f2107ad99770da7e.jpg",
+	    "https://telegra.ph/file/cee7d4b84849d6734fd6b.jpg",
+	    ];
+    const archerlogo = archer[Math.floor(Math.random() * archer.length)];
+     client.sendMessage(m.from,{image: {url: arilogo.image},caption: txt},{quoted:m})
 
      }
   }
