@@ -21,7 +21,7 @@ const lemo = `
 *🟩  http://wa.me/+263788671478 
 
 	    
-  await client.sendMessage(m.from,{video:{url:rae}, gifPlayback:true, caption: `*${pushName}* Sent you the details in your dm`},{quoted:m})
+  await client.sendMessage(m.from,{video:{url:rae}, gifPlayback:true, caption: `*${pushName}* 🟩Sent you the details in your dm`},{quoted:m})
   await  client.sendMessage(m.sender,{image:{url:Arilogogg},caption:lemo},{quoted:m})  
     }
 }
