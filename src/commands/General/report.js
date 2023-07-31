@@ -14,12 +14,9 @@ module.exports = {
             let userTag = m.sender.split("@")[0];
             let userMess = args.join(" ");
             let userName = pushName;
+            
+            const Arilogogg = "https://telegra.ph/file/e435278bda4f546ba3cfa.jpg"`
 
-            try {
-                userPfp = await client.profilePictureUrl(m.sender, "image");
-              } catch (e) {
-                userPfp = botImage3;
-              }
 
             let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*🍁 Character using:* Ari-Ani\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
             m.reply(`Sending report to main developer...\n\nIf it is a spam you might get *blocked* and *banned*.`);
@@ -37,11 +34,8 @@ module.exports = {
             let userName = pushName;
             let gcName = metadata.subject;
 
-            try {
-                userPfp = await client.profilePictureUrl(m.from, "image");
-              } catch {
-                userPfp = botImage3;
-              }
+             const Arilogogg = "https://telegra.ph/file/e435278bda4f546ba3cfa.jpg"`
+        
               let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n*🧩 Group Name:* ${gcName}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*🍁 Character using:* Ari-Ani\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
               m.reply(`Sending report to main developer...\n\nIf it is a spam you might get *blocked* and *banned*.`);
 
