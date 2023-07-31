@@ -17,8 +17,8 @@ const Arilogogg = "https://telegra.ph/file/e435278bda4f546ba3cfa.jpg"
 const lemo = `
 *━『 Request Bot To Join Your Group 』━*
 
-*⬛ Send your link to this number*`
-*🟩  http://wa.me/+263788671478 
+*⬛ Send your link to this number*
+*🟩  http://wa.me/+263788671478` 
 
 	    
   await client.sendMessage(m.from,{video:{url:rae}, gifPlayback:true, caption: `*${pushName}* 🟩Sent you the details in your dm`},{quoted:m})
