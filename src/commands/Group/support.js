@@ -13,22 +13,14 @@ module.exports = {
 let rae = yup[Math.floor(Math.random() * yup.length)]
 
   
-const Arilogogg = "https://images.app.goo.gl/8kz77zKAZYeV19dL9"
+const Arilogogg = "https://telegra.ph/file/e435278bda4f546ba3cfa.jpg"
         
                          
 const lemo = `
-*━『 Support Group Links 』━*
+*━『 Support Group Link 』━*
 
-
-
-* [ ${process.env.NAME} 's Support ] :*
-
-Link to be posted Soon.
-
-* [ ${process.env.NAME} 's Casino ] :*
-
-Link to be posted Soon.
-`
+https://chat.whatsapp.com/FbzMg4DzlGQKKfW43TPEGX`
+	    
   await client.sendMessage(m.from,{video:{url:rae}, gifPlayback:true, caption: `*${pushName}* have a look in your DM`},{quoted:m})
   await  client.sendMessage(m.sender,{image:{url:Arilogogg},caption:lemo},{quoted:m})  
     }
