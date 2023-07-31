@@ -78,7 +78,7 @@ let cm=commands.keys()
 	    "https://telegra.ph/file/cee7d4b84849d6734fd6b.jpg",
 	    ];
     const archerlogo = archer[Math.floor(Math.random() * archer.length)];
-     client.sendMessage(m.from,{image: {url: arilogo.image},caption: txt},{quoted:m})
+     client.sendMessage(m.from,{image: {url: archerlogo.image},caption: txt},{quoted:m})
 
      }
   }
