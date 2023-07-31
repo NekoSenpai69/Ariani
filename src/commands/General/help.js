@@ -72,16 +72,16 @@ let cm=commands.keys()
 *➪ Use ${client.prefix}help <command name> from help the list to see its description and usage*
 *➪ Eg: ${client.prefix}help profile*`
 			
-    const ari = [
+    const eternity = [
 	    "https://telegra.ph/file/d41b9e3e53a2e62a418a6.jpg",
 	    "https://telegra.ph/file/e8850f2107ad99770da7e.jpg",
 	    "https://telegra.ph/file/cee7d4b84849d6734fd6b.jpg",
 	    ];
-    const ari = ari[Math.floor(Math.random() * ari.length)];
-     client.sendMessage(m.from,{image: {url: arilogo.image},caption: txt},{quoted:m})
-
-     }
-  }
-}
+            const eternitylogo =
+             eternity[Math.floor(Math.random() * eternity.length)];
+          client.sendMessage(m.from, {image:{url:eternitylogo}, caption:txt}, { quoted: m });
+    }
+  },
+};
 
 
