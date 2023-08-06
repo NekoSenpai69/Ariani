@@ -9,7 +9,9 @@ module.exports = {
   cool:3,
   start: async (client, m, { iscreator, prefix, mentionByTag, pushName, args }) => {
     // Check if user is an admin
-   
+   if(economy == "false") {
+        m.reply("This is Not Economy enabled Group");
+      } else {
     if (!iscreator) return m.reply('You do not have permission to reset the user\'s economy data.');
 
     // Get user ID from mention
@@ -43,5 +45,6 @@ module.exports = {
     await economy.save();
 
     return m.reply(`Successfully reset ${args[1]} coins for user ${userId}.`);
+  }
   }
 }
