@@ -9,6 +9,10 @@ module.exports = {
   cool:30,
   usage: '/rob <user>',
   start: async (client, m, mentionByTag ,args) => {
+
+    if(economy == "false") {
+        m.reply("This is Not Economy enabled Group");
+      } else {
     if (!m.from.endsWith("@g.us")) {
       return m.reply("Please use this command in a group.");
     }
@@ -67,6 +71,6 @@ module.exports = {
       player.wallet -= fineAmount;
       await player.save();
     }
-    
+    }
   }
 }
