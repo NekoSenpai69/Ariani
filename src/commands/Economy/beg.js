@@ -11,7 +11,9 @@ module.exports = {
   react: '✅',
   start: async (client, m, { yaOwn, pushName, args }) => {
     
-     
+     if(economy == "false") {
+        m.reply("This is Not Economy enabled Group");
+      } else {
     const minCoins = 1;
     const maxCoins = 100;
     const earnedCoins = Math.floor(Math.random() * (maxCoins - minCoins + 1)) + minCoins;
@@ -34,5 +36,6 @@ module.exports = {
     await economy.save();
 
     m.reply(`You begged Deryl🙏 and received ${earnedCoins} coins!`);
+  }
   }
 }
