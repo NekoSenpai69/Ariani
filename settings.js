@@ -14,8 +14,9 @@ global.sessionId = process.env.SESSION_ID || null;
 global.malid = process.env.MAL_USERNAME || "Aku_sempai";
 global.malpass = process.env.MAL_PASSWORD || "Larsnoctis7";
 global.port = process.env.PORT || 8080;
-global.packname = process.env.PACKNAME || "Ari Ani"
-global.nameBot = process.env.NAME || "Ari Ani"
+global.packname = process.env.PACKNAME || "Ari Ani";
+global.nameBot = process.env.NAME || "Ari Ani";
+global.economy = process.env.ECONOMY || "true";
 
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
