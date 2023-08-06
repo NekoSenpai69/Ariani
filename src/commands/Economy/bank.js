@@ -9,6 +9,9 @@ module.exports = {
   react:"💸",
     start:async(client,m,{yaOwn,prefix , pushName,tagId})=>{
 
+      if(economy == "false") {
+        m.reply("This is Not Economy enabled Group");
+      } else {
       if (!m.from.endsWith("@g.us")) {
         return m.reply("Please use this command in a group.");
       }
@@ -29,5 +32,6 @@ module.exports = {
     \n💳Bank: ${bank}`
     
     await client.sendMessage(m.from , {text: walText} , {quoted:m})
-  }
+      }
+    }
 };
