@@ -9,6 +9,10 @@ module.exports = {
     react: '📈',
     cool:3,
     start: async (client, m, { prefix, pushname }) => {
+
+        if(economy == "false") {
+        m.reply("This is Not Economy enabled Group");
+      } else {
         const topUsers = await economyModel.find().sort({ wallet: -1 }).limit(10);
         if (!m.from.endsWith("@g.us")) {
             return m.reply("Please use this command in a group.");
@@ -24,4 +28,5 @@ module.exports = {
        
         await client.sendMessage(m.from , { text: response })
     }
+}
 }
