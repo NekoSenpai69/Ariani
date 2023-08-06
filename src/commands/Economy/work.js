@@ -8,6 +8,9 @@ module.exports = {
   cool:10,
    react: "💼",
    start: async(client, m, { text, prefix, isBotAdmin,isAdmin,mentionByTag}) => {
+     if(economy == "false") {
+        m.reply("This is Not Economy enabled Group");
+      } else {
       const works = [
         { name: ' Bus Conductor', min: 400, max: 600 },
         { name: 'Prostitude', min: 150, max: 400 },
@@ -47,5 +50,6 @@ module.exports = {
       
         return { ...work, ...payout };
     }
+     }
 }
 }
