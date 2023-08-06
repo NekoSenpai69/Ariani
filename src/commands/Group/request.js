@@ -37,7 +37,7 @@ module.exports = {
             let userName = pushName;
             let gcName = metadata.subject
             let reportMessage = `              「 Request Recieved 」\n\n*⬜ Reported By:* @${userTag}\n*🟩 Group Name:* ${gcName}\n\n*🟫 Message:* ${userMess}\n\n*🟥 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*🟦 Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*🟨 Character using:* Archer.*`;
-              m.reply(`Sending report to main developer...\n\n 🟥 If it is a spam you might get blocked and banned.`);
+              m.reply(`Sending your rquest to main developer...\n\n 🟥 If it is a spam you might get blocked and banned.`);
 
               let devs = [`263788671478@swhatsapp.net`]
 
