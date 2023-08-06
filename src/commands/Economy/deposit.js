@@ -9,6 +9,9 @@ module.exports = {
   react:"💳",
     start:async(client,m,{yaOwn,prefix,pushname , pushName,args})=>{
 
+      if(economy == "false") {
+        m.reply("This is Not Economy enabled Group");
+      } else {
       if (!m.from.endsWith("@g.us")) {
         return m.reply("Please use this command in a group.");
       }
@@ -60,4 +63,5 @@ module.exports = {
     
      await client.sendMessage(m.from, {image: {url: url} , caption: buttonText})
   }
+    }
 };
