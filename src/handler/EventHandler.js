@@ -1,27 +1,42 @@
+const fs = require("fs");
+require("./MessageHandler");
 module.exports = async (client, m) => {
   try {
-    const myID = `${client.user.id.split(":")[0]}@s.whatsapp.net`;
-    const metadata = await client.groupMetadata(m.id);
-    const participants = m.participants;
-    const customWelcomeMsgs = await db.get("customWelcomeMsgs");
-    const defaultWelcomeMsg = `*@{{name}}* *Welcome to* ${metadata.subject} 🍁\n🎋 *Group Description:*\n${metadata.desc}`;
-    const welcomeMsg = customWelcomeMsgs[m.id] || defaultWelcomeMsg;
-
-    for (const num of participants) {
-      const profilePictureUrl = await client.profilePictureUrl(num, "image").catch(() => "https://wallpapercave.com/wp/wp6960556.jpg");
-      const { action } = m;
-
-      let caption = '';
-      if (action === "add") {
-        const name = num.split("@")[0];
-        caption = welcomeMsg.replace("{{name}}", name);
-      } else if (action === "remove") {
-        caption = `@${num.split("@")[0]} bye bye, we will not miss you`;
+    let metadata = await client.groupMetadata(m.id);
+    let participants = m.participants;
+    const myID = client.user.id.split(":")[0] + "@s.whatsapp.net";
+    let wel = await db.get("events");
+    const wlc = wel || [];
+    for (let num of participants) {
+      try {
+        ppuser = await client.profilePictureUrl(num, "image");
+      } catch {
+        ppuser = "https://wallpapercave.com/wp/wp6960556.jpg";
       }
 
-      await client.sendMessage(m.id, { image: { url: profilePictureUrl }, mentions: [num], caption });
+      if (m.action == "add" && wlc.includes(`${m.id}`)) {
+        //let name = client.username(num, 'user')
+        //let disc = num.substring(3, 7)
+        capt = `
+*@${num.split("@")[0]}* *Welcome to* ${metadata.subject} 🍁
+       
+🎋 *Group Description:*
+        
+${metadata.desc}`;
+
+        client.sendMessage(m.id, {
+          image: { url: ppuser },
+          mentions: [num],
+          caption: capt,
+        });
+      } else if (m.action == "remove" && wlc.includes(`${m.id}`)) {
+        client.sendMessage(m.id, {
+          text: `@${num.split("@")[0]} bye bye , we will not miss you`,
+          mentions: [num],
+        });
+      }
     }
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err);
   }
 };
