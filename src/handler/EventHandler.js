@@ -11,7 +11,7 @@ module.exports = async (client, m) => {
       try {
         ppuser = await client.profilePictureUrl(num, "image");
       } catch {
-        ppuser = "";
+        ppuser = "https://telegra.ph/file/0ed47405d88ad398be105.jpg";
       }
 
       if (m.action == "add" && wlc.includes(`${m.id}`)) {
