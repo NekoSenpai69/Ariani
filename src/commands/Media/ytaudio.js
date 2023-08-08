@@ -27,7 +27,7 @@ module.exports = {
   
         const { videoDetails } = await YT.getInfo(term);
   
-        m.reply('*Mattekudasai, aku sama...*');
+        m.reply('*For You By Deryl*');
   
         let textResponse = `*Title:* ${videoDetails.title} | *Type:* Audio | *From:* ${videoDetails.ownerChannelName}`;
   
