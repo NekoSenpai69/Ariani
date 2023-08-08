@@ -8,14 +8,15 @@ if (!gg) {
 
 let owners = gg.split(",");
 global.owner = owners.map(owner => owner + '@s.whatsapp.net');
-global.mongodb = process.env.MONGO_URI || "mongodb+srv://Aku:aku@stress.gnomupc.mongodb.net/?retryWrites=true&w=majority";
+global.mongodb = process.env.MONGO_URI || null;
 global.prefa = process.env.PREFIX || ".";
-global.sessionId = process.env.SESSION_ID || "akuisAku2";
+global.sessionId = process.env.SESSION_ID || null;
 global.malid = process.env.MAL_USERNAME || "Aku_sempai";
 global.malpass = process.env.MAL_PASSWORD || "Larsnoctis7";
-global.port = process.env.PORT || 3080;
-global.packname = process.env.PACKNAME || "Ari Ani"
-global.nameBot = process.env.NAME || "Ari Ani"
+global.port = process.env.PORT || 8080;
+global.packname = process.env.PACKNAME || "Ari Ani";
+global.nameBot = process.env.NAME || "Ari Ani";
+global.economy = process.env.ECONOMY || "true";
 
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
