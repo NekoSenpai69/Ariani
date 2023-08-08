@@ -1,22 +1,34 @@
 const yts = require('yt-search')
+const YT = require('../../lib/YT');
 
 module.exports = {
-    name: 'ytsearch',
-    aliases: ['yts'],
-    category: 'media',
-    description: 'Searches the video of the given query in YouTube',
-    react: "✅",
-    async execute(client, flag, arg, M) {
-        if (!arg) return M.reply('Sorry you did not give any search term!')
-        const { videos } = await yts(arg.trim())
-        if (!videos || !videos.length) return M.reply(`No videos found | *"${query}"*`)
-        let text = ''
-        const length = videos.length >= 10 ? 10 : videos.length
+    name: "ytsearch",
+    alias: ["yts"],
+    usage: `${prefa}ytaudio <YouTube URL or search query>`,
+    desc: "Downloads and sends audio from a YouTube video.",
+    react: "🎵",
+    category: "Music",
+    start: async (client, m, { text, prefix, args }) => {
+      try {
+        if (!text) return m.reply('Sorry, you did not provide any search term!');
+  
+        const { videos } = await yts(text.trim());
+  
+        if (!videos || videos.length === 0) return m.reply(`No videos found for *"${text}"*`);
+  
+        let textResponse = '';
+        const length = videos.length >= 10 ? 10 : videos.length;
+  
         for (let i = 0; i < length; i++) {
-            text += `*#${i + 1}*\n📗 *Title: ${videos[i].title}*\n📕 *Channel: ${
-                videos[i].author.name
-            }*\n📙 *Duration: ${videos[i].seconds}s*\n🔗 *URL: ${videos[i].url}*\n\n`
+          textResponse += `*#${i + 1}*\n📗 *Title: ${videos[i].title}*\n📕 *Channel: ${
+            videos[i].author.name
+          }*\n📙 *Duration: ${videos[i].seconds}s*\n🔗 *URL: ${videos[i].url}*\n\n`;
         }
-        M.reply(text)
+  
+        m.reply(textResponse);
+      } catch (error) {
+        console.error(error);
+        m.reply('An error occurred while searching for videos. Please try again later.');
+      }
     }
-}
+  };

@@ -54,7 +54,7 @@
     "pino": "^7.6.5"
   },
   "scripts": {
-    "start": "node heart.js",
+    "start": "nodemon heart.js",
     "heroku-prebuild": "yarn install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
