@@ -1,5 +1,5 @@
-const fs = require("fs");
 require("./MessageHandler");
+
 module.exports = async (client, m) => {
   try {
     let metadata = await client.groupMetadata(m.id);
