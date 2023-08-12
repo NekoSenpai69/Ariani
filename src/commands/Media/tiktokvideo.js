@@ -1,8 +1,8 @@
 module.exports = {
     name: 'tiktok',
     category: 'media',
-    exp: 5,
     description: 'Downloads given instagram video and sends it as Audio',
+    react: "📽️",
     async execute(client, arg, M) {
   if (!arg)
         return client.sendMessage(
