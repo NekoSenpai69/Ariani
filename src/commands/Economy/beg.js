@@ -1,6 +1,6 @@
 const economyJs = require('../../models/economic');
 const moment = require('moment-timezone');
-
+const economy = require('../../commands/Economy/Economy.js')
 module.exports = {
   name: 'beg',
   alias: ['Beg'],
@@ -11,7 +11,7 @@ module.exports = {
   react: '✅',
   start: async (client, m, { yaOwn, pushName, args }) => {
     
-     if(economy == "false") {
+     if(economy[0].economy == "false") {
         m.reply("This is Not Economy enabled Group");
       } else {
     const minCoins = 1;
