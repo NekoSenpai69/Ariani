@@ -16,7 +16,11 @@ global.malpass = process.env.MAL_PASSWORD || "Larsnoctis7";
 global.port = process.env.PORT || 8080;
 global.packname = process.env.PACKNAME || "Archer";
 global.nameBot = process.env.NAME || "Archer";
-global.economy = process.env.ECONOMY || "false";
+global.economy = [
+  {
+economy:false
+  }
+]
 
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
