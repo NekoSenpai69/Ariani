@@ -1,5 +1,5 @@
 const economyJs = require('../../models/economic');
-const economy = require('./commands/Economy/Economy.js')
+const economy = require('./Economy.js')
 module.exports = {
   name: 'slot',
   alias: ['bet'],
