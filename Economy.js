@@ -1,3 +1,4 @@
+const {economy} = require('./Econom.js')
 module.exports = {
   name: 'economy',
   alias:["economics"],
@@ -28,4 +29,4 @@ if(text == 'on') {
   m.reply(`Not A valid Statement !!`)
 }
       }
-}
+  }
