@@ -6,7 +6,7 @@ module.exports={
     alias:["ly"],
     usage:`${prefa}lyrics song name`,
     desc:"Gives you lyrics of song",
-    category: "Media",
+    category: "Music",
     react:"💦",
     start:async(client,m,{command,prefix,text,args})=>{
 if(!text) {
