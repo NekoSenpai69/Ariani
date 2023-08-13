@@ -1,4 +1,4 @@
-const economyJs = require('../../models/economic')
+
 module.exports = {
   name: 'economy',
   alias:["economics"],
