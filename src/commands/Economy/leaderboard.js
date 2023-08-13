@@ -1,4 +1,5 @@
 const economyModel = require("../../models/economic");
+const {economy} = require('./econom.js');
 const economy = require('./Economy.js')
 module.exports = {
     name: 'leaderboard',
