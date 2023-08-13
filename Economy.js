@@ -7,11 +7,7 @@ module.exports = {
   cool:3,
   react:"💸",
     start:async(client,m,{prefix , pushName,tagId})=>{
-const economy = [
-  {
-    economy:false
-  }
-]
+
 if(text == 'on') {
   if(economy[0].economy == 'true') {
     m.reply(`Economy is Already enabled !!`)
