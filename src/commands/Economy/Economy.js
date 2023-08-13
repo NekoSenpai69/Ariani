@@ -1,4 +1,4 @@
-const {economy} = require('./Econom.js')
+const {economy} = require('./econom.js')
 module.exports = {
   name: 'economy',
   alias:["economics"],
