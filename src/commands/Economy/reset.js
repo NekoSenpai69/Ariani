@@ -1,4 +1,4 @@
-const economy = require('./commands/Economy/Economy.js')
+const economy = require('./Economy.js')
 const economyJs = require('../../models/economic')
 module.exports = {
   name: 'reset',
