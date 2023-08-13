@@ -1,3 +1,4 @@
+const economy = require('../../commands/Economy/Economy.js')
 const economyJs = require('../../models/economic')
 module.exports = {
   name: 'give',
@@ -9,7 +10,7 @@ module.exports = {
   react:"💸",
     start:async(client,m,{args,prefix , pushName,mentionByTag})=>{
 
-      if(economy == "false") {
+      if(economy[0].economy == "false") {
         m.reply("This is Not Economy enabled Group");
       } else {
       
