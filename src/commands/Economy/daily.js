@@ -1,6 +1,6 @@
 const economyJs = require('../../models/economic')
 const moment = require('moment-timezone');
-const economy = require('../../commands/Economy/Economy.js')
+const economy = require('./commands/Economy/Economy.js')
 module.exports = {
   name: 'daily',
   alias: ['Daily'],
