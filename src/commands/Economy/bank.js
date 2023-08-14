@@ -9,7 +9,7 @@ module.exports = {
   react:"💸",
     start:async(client,m,{yaOwn,prefix , pushName,tagId})=>{
 
-      if(economy[0].economy == "false") {
+      if(economy == "false") {
         m.reply("This is Not Economy enabled Group");
       } else {
       if (!m.from.endsWith("@g.us")) {
