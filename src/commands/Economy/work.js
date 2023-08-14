@@ -1,4 +1,5 @@
 const economyJs = require('../../models/economic')
+
 module.exports = {
   name: 'work',
   alias:["Work"],
@@ -7,7 +8,7 @@ module.exports = {
   cool:10,
    react: "💼",
    start: async(client, m, { text, prefix, isBotAdmin,isAdmin,mentionByTag}) => {
-     if(economy[0].economy == "false") {
+     if(economy == "false") {
         m.reply("This is Not Economy enabled Group");
       } else {
       const works = [
