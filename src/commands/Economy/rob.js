@@ -1,5 +1,4 @@
 const Player = require("../../models/economic");
-const {economy} = require('./econom.js');
 module.exports = {
   name: 'rob',
   alias: ['robbing'],
