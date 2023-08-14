@@ -1,4 +1,5 @@
 const Player = require("../../models/economic");
+
 module.exports = {
   name: 'rob',
   alias: ['robbing'],
@@ -9,7 +10,7 @@ module.exports = {
   usage: '/rob <user>',
   start: async (client, m, mentionByTag ,args) => {
 
-    if(economy[0].economy == "false") {
+    if(economy == "false") {
         m.reply("This is Not Economy enabled Group");
       } else {
     if (!m.from.endsWith("@g.us")) {
