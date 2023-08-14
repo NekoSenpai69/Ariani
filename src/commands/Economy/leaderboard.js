@@ -1,4 +1,5 @@
 const economyModel = require("../../models/economic");
+
 module.exports = {
     name: 'leaderboard',
     alias: ['lb'],
@@ -9,7 +10,7 @@ module.exports = {
     cool:3,
     start: async (client, m, { prefix, pushname }) => {
 
-        if(economy[0].economy == "false") {
+        if(economy == "false") {
         m.reply("This is Not Economy enabled Group");
       } else {
         const topUsers = await economyModel.find().sort({ wallet: -1 }).limit(10);
