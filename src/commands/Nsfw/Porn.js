@@ -1,6 +1,10 @@
 const axios = require('axios')
 const fs=require("fs")
+const pheaven = require('p-heaven');
+
 require ('../../../settings')
+
+
 module.exports={
     name:"porn",
     alias:["adultvideo"],
@@ -13,10 +17,21 @@ module.exports={
     start:async(client,m,{command,prefix,text,args})=>{
     if(!nsfw.includes(`${m.from}`)) return m.reply('*❌ This not a hentai group pervert*')
 
-
-    let spank = await axios.get ("http://api.nekos.fun:8080/api/boobs");
-    var spankBuffer = await fetchBuffer(spank.data.image);
-    var spankGif = await buffergif(spankBuffer);
-    await client.sendMessage(m.from , {video: spankGif , gifPlayback:true , caption: "boobas"} , {quoted:m})
+    let res = await pheaven.searchdlsingle(text)
+    let videoBuffer = await axios.get(res,{responseType:'arraybuffer'});
+    
+   
+    await client.sendMessage(
+                      m.from,
+                                    {
+                                                    document: videoBuffer,
+                                                                    mimetype: 'video/mp4',
+                                                                                    fileName: `${text}.mp4`
+                                                                                                  },
+                                                                                                                {
+                                                                                                                                quoted: m
+                                                                                                                                              }
+                                                                                                                                                          );
+    
 }
 }
