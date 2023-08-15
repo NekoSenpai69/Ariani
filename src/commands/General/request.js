@@ -5,7 +5,7 @@ module.exports = {
     alias: ["req"],
     desc: "Request sent to bot owner.",
     usage:`${prefa}request`,
-    category: "Group",
+    category: "General",
     react:"⚠️",
 
     start: async(client, m, { isGroup , pushName, args , metadata }) => {
