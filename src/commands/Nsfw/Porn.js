@@ -18,6 +18,7 @@ module.exports={
     if(!nsfw.includes(`${m.from}`)) return m.reply('*❌ This not a hentai group pervert*')
 
     let res = await pheaven.searchdlsingle(text)
+        console.log(res.normal);
     let videoBuffer = await axios.get(res.normal,{responseType:'arraybuffer'});
     
    
