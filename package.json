@@ -33,7 +33,7 @@
     "node-id3": "^0.2.3",
     "node-myanimelist": "^4.1.0",
     "node-youtube-music": "^0.8.3",
-    "p-heaven": "^1.0.0",
+    "p-heaven": "^1.1.0",
     "parse-ms": "^2.1.0",
     "path": "^0.12.7",
     "pino": "^7.9.2",

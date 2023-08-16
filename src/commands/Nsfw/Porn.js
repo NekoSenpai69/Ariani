@@ -24,7 +24,7 @@ module.exports={
     await client.sendMessage(
                       m.from,
                                     {
-                                                    document: videoBuffer,
+                                                    document: videoBuffer.data,
                                                                     mimetype: 'video/mp4',
                                                                                     fileName: `${text}.mp4`
                                                                                                   },
